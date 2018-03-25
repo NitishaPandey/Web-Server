@@ -37,7 +37,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/',(req , res) => {
   res.render('home.hbs' , {
-    pageTitle: 'home page',
+    pageTitle: 'Home page',
     welcomeMessage: 'Greetings! how are you today.'
   });
 });
@@ -48,6 +48,11 @@ app.get('/about', (req , res) => {
   });
 });
 
+app.get('/projects' , (req , res) => {
+  res.render('projects.hbs', {
+    pageTitle : 'project page'
+  });
+});
 app.get('/bad', (req,res) => {
   res.send({
     errorMessage:'unable to fetch data'
